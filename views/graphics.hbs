@@ -1,0 +1,52 @@
+<style>
+	p {
+		color: black;
+	}
+
+	img
+	{
+		margin-left: 33%;
+	}
+
+	select
+	{
+		color: black;
+		background-color: lightgrey;
+		font-weight: bold; 
+		margin-left: 80%;
+	}
+
+	canvas
+	{
+		width: 70%;
+	}
+</style>
+<img id="carregando" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Gray_circles_rotate.gif" width="400" height="400">
+<section id="container" class="color">
+	<select onchange="test()" name="Options" id="abc">
+	</select>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+	<section style="width:70%">
+		<canvas class="canvasGraphics" id="chart" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;"></canvas>
+	</section>
+		<p id="Analitico1">
+			
+		</p>
+	<section style="width:70%">
+		<canvas class="canvasGraphics" id="chart1" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;"></canvas>
+	</section>
+		<p id="Analitico2">
+
+		</p>
+	<section style="width:70%">
+		<canvas class="canvasGraphics" id="chart2" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;"></canvas>
+	</section>
+		<p id="Analitico3">
+
+		</p>
+    <p style="display: none" id="id">{{id}}</p>
+    <script src="/javascript/graphics.js"></script>
+</section>
+    

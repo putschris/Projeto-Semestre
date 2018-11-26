@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="Dashboard">
+	<meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+	<title>DASHGUM - Bootstrap Admin Template</title>
+
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
+	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet">
+	<link href="assets/css/style-responsive.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<script>
+		function mascara(i, t) {
+
+			var v = i.value;
+
+			if (t == "cpf") {
+				i.setAttribute("maxlength", "14");
+				if (v.length == 3 || v.length == 7) i.value += ".";
+				if (v.length == 11) i.value += "-";
+			}
+			else if (t == "rg") {
+				i.setAttribute("maxlength", "12");
+				if (v.length == 2 || v.length == 6) i.value += ".";
+				if (v.length == 10) i.value += "-";
+
+				// 38.999.788-2
+			}
+		}
+	</script>
+	<div id="login-page">
+		<div class="container">
+
+			<form class="form-login" method="POST" action="/signup">
+				<h2 class="form-login-heading">Cadastro</h2>
+				<div class="login-wrap">
+					{{!-- Nome --}}
+					<input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" autofocus>
+					<br> {{!-- Sobrenome --}}
+					<input type="text" class="form-control" name="sobrenome" id="sobrenome" placeholder="Sobrenome" autofocus>
+					<br> {{!-- Genero Masc --}} {{!-- Genero Fem --}} {{!-- RG --}}
+					<input oninput="mascara(this, 'rg')" class="form-control" name="rg" id="rg" placeholder="RG" autofocus>
+					<br> {{!-- CPF --}}
+					<input oninput="mascara(this, 'cpf')" class="form-control" name="cpf" id="cpf" placeholder="CPF" autofocus>
+					<br> {{!-- Email --}}
+					<input type="text" class="form-control" name="email" id="email" placeholder="Email" autofocus>
+					<br> {{!-- Usuário --}}
+					<input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuário" autofocus>
+					<br> {{!-- Senha --}}
+					<input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" minlength="8" maxlength="30" autofocus>
+					<br> {{!-- Data de Criação --}}
+					<p>{{error}}</p>
+
+					<button class="btn btn-theme btn-block" type="submit">
+						<i class="fa fa-lock"></i> Criar conta</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
+	<script>
+		$.backstretch("assets/img/login-bg.jpg", { speed: 2000 });
+	</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Barionix</title>
+    <style>
+        body
+        {
+            color: black
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div class="container">
+        <form action="/data/Arduinos/Create" method="post" id="adcArduino">
+            
+            <p>
+               Insira a Latitude: <input type="text" placeholder="Latitude" name="lat" />
+            </p> 
+            <p>
+                Insira a Longitude: <input type="text" placeholder="Longitude" name="lng" />
+            </p>
+            <p>
+                Insira um local de Referência: <input type="text" placeholder="Local de Referencia" name="ref" />
+            </p>   
+                
+                <button type="submit">Adicionar</button>
+            </p>
+        </form>
+        <p id="erro"></p>
+        <script src="/javascript/createArduino.js"></script>
+    </div>
+
+</body>
+
+</html>
